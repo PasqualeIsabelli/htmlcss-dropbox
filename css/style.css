@@ -72,7 +72,6 @@ body {
 .hero-section {
     background-color: var(--primary-color);
     width: 100%;
-    height: 650px;
     padding-top: 100px;
 }
 
@@ -136,9 +135,8 @@ h1 {
 }
 
 .first-main-section {
-    height: 1500px;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 .first-container {
@@ -165,6 +163,34 @@ h1 {
 h2 {
     font-size: 40px;
     margin-bottom: 35px;
+}
+
+.radio-container [type="radio"] {
+    display: none;
+}
+
+.radio-container label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.radio-container label:last-child {
+    margin-left: 2rem;
+}
+
+.radio-container label .fake-radio {
+    content: "";
+    border: 1px solid var(--border-color);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.3s linear;
+}
+
+.radio-container label input:checked ~ .fake-radio {
+    border-color: var(--btn-color);
+    border-width: 5px;
 }
 
 .column {
@@ -205,8 +231,16 @@ h2 {
     padding: 30px 15px;
 }
 
-ul {
-    list-style-type: none; /*sistemare le icon allineate tra loro*/
+.icon-list {
+    list-style-type: none;
+}
+
+.icon-list li {
+    padding-left: 20px;
+}
+
+.icon-list li > i {
+    margin-left: -20px;
 }
 
 .title-content, .check {
@@ -223,6 +257,10 @@ ul {
 
 .share, .p-content {
     margin-bottom: 45px;
+}
+
+.col {
+    color: var(--border-color);
 }
 
 hr {
@@ -275,9 +313,8 @@ hr {
 }
 
 .second-main-section {
-    height: 600px;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 .second-container {
@@ -290,7 +327,7 @@ hr {
 
 .img-left {
     height: 500px;
-    width: 70%;
+    width: 70%; /*perchè non va con flex-grow?*/
     margin-right: 5px;
     background-image: url(../img/partner.png);
     background-repeat: no-repeat;
@@ -299,15 +336,14 @@ hr {
 
 .text-right{
     height: 500px;
-    width: 30%;
+    width: 30%; /*perche non va con flex-grow?*/
     margin-left: 30px;
     padding: 50px 25px;
 }
 
 .third-main-section {
-    height: 1200px;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 .third-container {
@@ -350,7 +386,6 @@ hr {
 }
 
 .fourth-main-section {
-    height: 1030px;
     width: 100%;
     padding-top: 80px;
 }
@@ -372,36 +407,35 @@ hr {
 }
 
 .fifth-container {
-    height: 630px;
-    width: 100%;
-    border: 1px dashed black;
-    font-size: 50px;
-    text-align: center;
     display: flex;
+    position: relative;
 }
 
-.left, .center, .right {
-    height: 100%;
+.fifth-box-container {
     width: calc(100% / 3);
-}
-.center {
-    border: 1px solid red;
-}
-
-.top, .bottom {
-    height: 50%;
-    width: 100%;
+    aspect-ratio: 1/1;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.designit, .asu, .uf, .topps, .wbr, .hearst, .lp, .cco {
-    height: 100%;
+.fifth-box-container .box {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .designit {
     background-color: var(--designit-background);
-    border: 1rem solid var(--designit-border);
+    border: 1rem solid transparent;
+}
+
+.fifth-box-container .designit:hover {
+    border-color: var(--designit-border);
+}
+
+.fifth-box-container .designit:hover .box {
+    display: block;
 }
 
 .asu {
@@ -432,9 +466,16 @@ hr {
     background-color: var(--cco-background);
 }
 
-.svg { /*sistemare svg e div centrale con scrollbar*/
-    fill: white;
-    object-fit: contain;
+.fifth-box-container .box svg {
+    width: 80%;
+    height: auto;
+    color: white;
+}
+
+.center {
+    padding: 2.5rem;
+    background-color: var(--border-color);
+    overflow: auto;
 }
 
 .fifth-main-section {
@@ -557,6 +598,10 @@ footer {
     text-align: center;
     line-height: 35px;
     font-size: 15px;
+}
+
+.foot {
+    color: white;
 }
 
 .p-footer {
