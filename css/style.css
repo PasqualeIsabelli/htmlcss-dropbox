@@ -418,6 +418,10 @@ hr {
     flex-wrap: wrap;
 }
 
+.box {
+    aspect-ratio: 1/1;
+}
+
 .fifth-box-container .box {
     width: 50%;
     display: flex;
